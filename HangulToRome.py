@@ -1,4 +1,4 @@
-from jamo import h2j
+from jamo import *
 import sys
 mod = sys.modules[__name__]
 
@@ -11,8 +11,8 @@ hangul_input = str(input('변환할 한글을 입력하세요. 단, 문장은 �
 hangul_bunli = j2hcj(h2j(hangul_input))
 #한글 분리
 
-rome_list = [['ㄱ','g'],['ㄱ2','k'],['ㅋ','k'],['ㄷ','d'],['ㄷ2','t'],['ㄸ','tt'],['ㅌ','t'],['ㅂ','b'],['ㅂ2','p'],
-             ['ㅃ','pp'],['ㅍ','p'],['ㅈ','j'],['ㅉ','jj'],['ㅊ','ch'],['ㅅ','s'],['ㅆ','ss'],['ㅎ','h'],['ㄴ','n'],['ㅁ','m'],['ㄹ','r']['ㄹ2','l],
+rome_list = [['ㄱ','k'],['ㄱ2','g'],['ㅋ','k'],['ㄷ','d'],['ㄷ2','t'],['ㄸ','tt'],['ㅌ','t'],['ㅂ','b'],['ㅂ2','p'],
+             ['ㅃ','pp'],['ㅍ','p'],['ㅈ','j'],['ㅉ','jj'],['ㅊ','ch'],['ㅅ','s'],['ㅆ','ss'],['ㅎ','h'],['ㄴ','n'],['ㅁ','m'],['ㄹ','r'],['ㄹ2','l'],
              ['ㅏ','a'],['ㅓ','eo',],['ㅗ','o'],['ㅜ','u'],['ㅡ','eu'],['ㅣ','i'],['ㅐ','ae'],['ㅔ','e'],['ㅚ','oe'],['ㅟ','wi'],['ㅑ','ya'],['ㅕ','yeo'],['ㅛ','yo'],
              ['ㅠ','yu'],['ㅒ','yae'],['ㅖ','ye'],['ㅘ','wa'],['ㅙ','wae'],['ㅝ','wo'],['ㅞ','we'],['ㅢ','ui']]
 
@@ -27,7 +27,7 @@ for i in range(19):
 for i in range(19):
     setattr(mod, 'jaum_change_d_{}'.format(i), 'ㄱ'+moum_list_2.pop())
 for i in range(19):
-    setattr(mod, 'jaum_change_b_{}'.format(i), 'ㄱ'+moum_list_2.pop())
+    setattr(mod, 'jaum_change_b_{}'.format(i), 'ㄱ'+moum_list_3.pop())
 
 #로마자 표기법
 # ※ ㄱ,ㄷ,ㅂ은 모음 앞에서는 g,d,b 로, 자음 앞이나 어말에서는 k,t,p로 발음한다.
@@ -36,5 +36,5 @@ for i in range(19):
 hangul_bunli_list = [hangul_bunli]
 for i in range (19):
     if hangul_bunli in 'jaum_change_g{}'.format(i):
-        hangul_bunli.replace("'jaum_change_g{}'.format(i)",ㄱ2)
+        hangul_bunli.replace("'jaum_change_g{}'.format(i)",'ㄱ2')
 if hangul_bunli_list in
