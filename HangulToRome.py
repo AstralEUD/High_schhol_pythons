@@ -25,9 +25,9 @@ moum_list_3 = moum
 for i in range(19):
     setattr(mod, 'jaum_change_g_{}'.format(i), 'ㄱ'+moum_list_1.pop())
 for i in range(19):
-    setattr(mod, 'jaum_change_d_{}'.format(i), 'ㄱ'+moum_list_2.pop())
+    setattr(mod, 'jaum_change_d_{}'.format(i), 'ㄷ'+moum_list_2.pop())
 for i in range(19):
-    setattr(mod, 'jaum_change_b_{}'.format(i), 'ㄱ'+moum_list_2.pop())
+    setattr(mod, 'jaum_change_b_{}'.format(i), 'ㅂ'+moum_list_2.pop())
 
 #로마자 표기법
 # ※ ㄱ,ㄷ,ㅂ은 모음 앞에서는 g,d,b 로, 자음 앞이나 어말에서는 k,t,p로 발음한다.
@@ -37,4 +37,8 @@ hangul_bunli_list = [hangul_bunli]
 for i in range (19):
     if hangul_bunli in 'jaum_change_g{}'.format(i):
         hangul_bunli.replace("'jaum_change_g{}'.format(i)",ㄱ2)
+    if hangul_bunli in 'jaum_change_d{}'.format(i):
+        hangul_bunli.replace("'jaum_change_d{}'.format(i)",ㄷ2)
+    if hangul_bunli in 'jaum_change_b{}'.format(i):
+        hangul_bunli.replace("'jaum_change_b{}'.format(i)",ㅂ2)
 if hangul_bunli_list in
