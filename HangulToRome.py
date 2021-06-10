@@ -7,7 +7,7 @@ mod = sys.modules[__name__]
 #Powershell 이나 CMD 를 관리자 권한으로 실행해서
 #pip3 install jamo
 #를 통하여 Jamo 패키지를 설치하세요.
-#jamo 패키지는 한글의 초/중/종성 분리를 위한 패키지입니다.
+#jamo 패키지는 c의 초/중/종성 분리를 위한 패키지입니다.
 hangul_input = str(input('변환할 한글을 입력하세요. 단, 문장은 되지 않고 단어형만 가능합니다'))
 hangul_bunli = j2hcj(h2j(hangul_input))
 #한글 분리
@@ -28,25 +28,41 @@ for i in range(19):
 
 #로마자 표기법
 # ※ ㄱ,ㄷ,ㅂ은 모음 앞에서는 g,d,b 로, 자음 앞이나 어말에서는 k,t,p로 발음한다.
-
-'''for i in range(20):
+'''
+for i in range(20):
     globals()['hangul_temp_g{}'.format(i)] = 0
     globals()['hangul_temp_d{}'.format(i)] = 0
     globals()['hangul_temp_b{}'.format(i)] = 0'''
 
-
+#memo: hangul_bunli.find('variable's name)
+#if it exists: 0
+#if it doesn't exist: -1
+#if hangul_bunli.find(globals()["jaum_change_g_{}".format(i)]) == 0:
 hangul_bunli_list = [hangul_bunli]
 for i in range (19):
-    if hangul_bunli in globals()["jaum_change_g_{}".format(i)]:
-        globals()["hangul_temp_g{}".format(i)] = globals()["jaum_change_g{}".format(i)]
-        globals()["hangul_temp_g{}".format(i)].replace("ㄱ","ㄱ2")
-        hangul_bunli.replace("globals()['jaum_change_g_{}'.format(i)]","globals['hangul_temp_g{}'.format(i)]")
-    if hangul_bunli in globals()["jaum_change_d_{}".format(i)]:
-        globals()["hangul_temp_d{}".format(i)] = globals()["jaum_change_d{}".format(i)]
-        globals()["hangul_temp_d{}".format(i)].replace("ㄷ","ㄷ2")
-        hangul_bunli.replace("'jaum_change_d_{}'.format(i)",'hangul_temp_d{}.format(i)')
-    if hangul_bunli in globals()["jaum_change_b_{}".format(i)]:
-        globals()["hangul_temp_b{}".format(i)] = globals()["jaum_change_d{}".format(i)]
-        globals()["hangul_temp_b{}".format(i)].replace("Q","Q2")
-        hangul_bunli.replace("'jaum_change_d_{}'.format(i)",'hangul_temp_d{}.format(i)')
-    print(hangul_bunli)
+    #if hangul_bunli in globals()["jaum_change_g_{}".format(i)]:
+    if hangul_bunli.find(globals()["jaum_change_g_{}".format(i)]) >= 0:
+        #globals()['hangul_temp_g{}'.format(i)] = globals()["jaum_change_g_{}".format(i)]
+        #globals()["hangul_temp_g{}".format(i)].replace("ㄱ","ㄱ2")
+        #hangul_bunli.replace(globals()["jaum_change_g_{}".format(i)],globals()["hangul_temp_g{}".format(i)])
+        hangul_bunli = hangul_bunli.replace(globals()["jaum_change_g_{}".format(i)],globals()["jaum_change_g_{}".format(i)].replace("ㄱ","ㄱ2"))
+        #hangul_bunli.replace(globals()["jaum_change_g_{}.format(i)]","#")
+        print('found',i)
+        #hangul_bunli.replace("globals()['jaum_change_g_{}'.format(i)]","globals['hangul_temp_g{}'.format(i)]")
+    #if hangul_bunli in globals()["jaum_change_d_{}".format(i)]:
+    if hangul_bunli.find(globals()["jaum_change_d_{}".format(i)]) >= 0:
+        #globals()["hangul_temp_d{}".format(i)] = globals()["jaum_change_d{}".format(i)]
+        #globals()["hangul_temp_d{}".format(i)].replace("ㄷ","ㄷ2")
+        hangul_bunli = hangul_bunli.replace(globals()["jaum_change_d_{}".format(i)],globals()["jaum_change_d_{}".format(i)].replace("ㄷ","ㄷ2"))
+        #hangul_bunli.replace(globals()["jaum_change_d_{}".format(i)],globals()["hangul_temp_d{}".format(i)])
+        #hangul_bunli.replace("'jaum_change_d_{}'.format(i)",'hangul_temp_d{}.format(i)')
+    #if hangul_bunli in globals()["jaum_change_b_{}".format(i)]:
+    if hangul_bunli.find(globals()["jaum_change_b_{}".format(i)]) >= 0:
+        #globals()["hangul_temp_b{}".format(i)] = globals()["jaum_change_d{}".format(i)]
+        #globals()["hangul_temp_b{}".format(i)].replace("Q","Q2")
+        hangul_bunli = hangul_bunli.replace(globals()["jaum_change_b_{}".format(i)],globals()["jaum_change_b_{}".format(i)].replace("ㅂ","ㅂ2"))
+        #hangul_bunli.replace(globals()["jaum_change_b_{}".format(i)],globals()["hangul_temp_b{}".format(i)])
+       #hangul_bunli.replace("'jaum_change_b_{}'.format(i)",'hangul_temp_b{}.format(i)')
+
+#if rome_list[i][0] in hangul_bunli:
+        #hangul_bunli = hangul_bunli.replace(rome_list[i][0],rome_list[i][1])
