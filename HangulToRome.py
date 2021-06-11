@@ -7,7 +7,7 @@ mod = sys.modules[__name__]
 #Powershell 이나 CMD 를 관리자 권한으로 실행해서
 #pip3 install jamo
 #를 통하여 Jamo 패키지를 설치하세요.
-#jamo 패키지는 c의 초/중/종성 분리를 위한 패키지입니다.
+#jamo 패키지는 초/중/종성 분리를 위한 패키지입니다.
 hangul_input = str(input('변환할 한글을 입력하세요. 단, 문장은 되지 않고 단어형만 가능합니다'))
 hangul_bunli = j2hcj(h2j(hangul_input))
 #한글 분리
@@ -38,11 +38,11 @@ for i in range(20):
     globals()['hangul_temp_d{}'.format(i)] = 0
     globals()['hangul_temp_b{}'.format(i)] = 0'''
 
+
 #memo: hangul_bunli.find('variable's name)
-#if it exists: 0
+#if it exists >= 0
 #if it doesn't exist: -1
 #if hangul_bunli.find(globals()["jaum_change_g_{}".format(i)]) == 0:
-hangul_bunli_list = [hangul_bunli]
 for i in range (19):
     #if hangul_bunli in globals()["jaum_change_g_{}".format(i)]:
     if hangul_bunli.find(globals()["jaum_change_g_{}".format(i)]) >= 0:
@@ -71,7 +71,7 @@ for i in range (19):
         hangul_bunli = hangul_bunli.replace(globals()["jaum_change_b_{}".format(i)][0],"b")
         print('found',globals()["jaum_change_b_{}".format(i)])
         #hangul_bunli.replace(globals()["jaum_change_b_{}".format(i)],globals()["hangul_temp_b{}".format(i)])
-       #hangul_bunli.replace("'jaum_change_b_{}'.format(i)",'hangul_temp_b{}.format(i)')
+        #hangul_bunli.replace("'jaum_change_b_{}'.format(i)",'hangul_temp_b{}.format(i)')
     if hangul_bunli.find(globals()["jaum_change_r_{}".format(i)]) >= 0:
         hangul_bunli = hangul_bunli.replace(globals()["jaum_change_r_{}".format(i)][0],"r")
         print('found',globals()["jaum_change_r_{}".format(i)])
