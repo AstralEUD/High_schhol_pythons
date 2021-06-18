@@ -56,6 +56,23 @@ while check_a == False:
 print('==============\n선택 정렬 결과\n===============')
 print(list_copy2,"\n"*5)
         
-        
-            
-    
+#퀵 정렬 (quick sort)
+list_copy3 = list_bubble[:]
+check_d = False
+try_count = 0
+pivot_number = 0
+def list_dividie(list_temp):
+    for ab in range(5):
+        print(ab
+while check_d == False:
+    for h in range(0,len(list_copy3),1):
+        for v in range(0,1,1):
+            for o in range(len(list_copy3)//try_count*2):
+                globals()['pivot{}'.format(v)]
+
+
+
+
+#tip: 중복 함수 적용 (ref: https://www.daleseo.com/sort-quick/)
+
+
