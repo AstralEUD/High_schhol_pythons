@@ -56,23 +56,27 @@ while check_a == False:
 print('==============\n선택 정렬 결과\n===============')
 print(list_copy2,"\n"*5)
         
-#퀵 정렬 (quick sort)
+#삽입 정렬 (insert sort)
 list_copy3 = list_bubble[:]
 check_d = False
-try_count = 0
-pivot_number = 0
-def list_dividie(list_temp):
-    for ab in range(5):
-        print(ab
+now_index = len(list_copy3) - 1
 while check_d == False:
-    for h in range(0,len(list_copy3),1):
-        for v in range(0,1,1):
-            for o in range(len(list_copy3)//try_count*2):
-                globals()['pivot{}'.format(v)]
+    temp_list = list_copy3[:]
+    for a in range(0,len(list_copy3),1):
+        if list_copy3[now_index][e] > list_copy3[a][e]:
+            print(list_copy3[now_index][e],'are > ',list_copy3[a][e])
+        elif list_copy3[now_index][e] < list_copy3[a][e]:
+            temp_insertion = list_copy3[now_index]
+            list_copy3.remove(temp_insertion)
+            list_copy3.insert(a-1,temp_insertion)
+    now_index -= 1
+    print(list_copy3)
+    if now_index == 0:
+        check_d = True
+print('='*10,'\n삽입 정렬 결과\n','='*10)
+print(list_copy3)
 
 
 
-
-#tip: 중복 함수 적용 (ref: https://www.daleseo.com/sort-quick/)
-
+#ref : https://www.daleseo.com/sort-insertion/
 
