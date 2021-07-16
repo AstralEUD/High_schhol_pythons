@@ -14,12 +14,15 @@
 import time
 import os.path
 import pickle
+import sys
 #encoding=utf-8
 import io
 from playsound import playsound
 #타종 재생을 위한 모듈입니다. 별도로 설치해 주세요.
 from tkinter import *
 from tkinter import messagebox
+
+sys.setrecursionlimit(1000000000)
 
 root = Tk()
 root.title("원격수업 시종알리미")
@@ -43,11 +46,11 @@ def DayGet():
     elif tempday == 'Thu':
         today = '목요일'
     elif tempday == 'Fri':
-        today == '금요일'
+        today = '금요일'
     elif tempday == 'Sat':
-        today == '토요일'
+        today = '토요일'
     elif tempday == 'Sun':
-        today == '일요일'
+        today = '일요일'
 #영문으로 받아온 요일 (tempday)를 한글로 변경하는 함수
 def SubjSetting():
     NowSelected = listboxD.get(ACTIVE)
