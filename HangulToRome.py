@@ -46,32 +46,14 @@ for i in range(20):
 for i in range (19):
     #if hangul_bunli in globals()["jaum_change_g_{}".format(i)]:
     if hangul_bunli.find(globals()["jaum_change_g_{}".format(i)]) >= 0:
-        #globals()['hangul_temp_g{}'.format(i)] = globals()["jaum_change_g_{}".format(i)]
-        #globals()["hangul_temp_g{}".format(i)].replace("ㄱ","ㄱ2")
-        #hangul_bunli.replace(globals()["jaum_change_g_{}".format(i)],globals()["hangul_temp_g{}".format(i)])
         hangul_bunli = hangul_bunli.replace(globals()["jaum_change_g_{}".format(i)][0],"g")
-        #hangul_bunli = hangul_bunli.replace(globals()["jaum_change_g_{}".format(i)],globals()["jaum_change_g_{}".format(i)].replace("ㄱ","ㄱ2"))
-        #hangul_bunli.replace(globals()["jaum_change_g_{}.format(i)]","#")
         print('found',globals()["jaum_change_g_{}".format(i)])
-        #hangul_bunli.replace("globals()['jaum_change_g_{}'.format(i)]","globals['hangul_temp_g{}'.format(i)]")
-    #if hangul_bunli in globals()["jaum_change_d_{}".format(i)]:
     if hangul_bunli.find(globals()["jaum_change_d_{}".format(i)]) >= 0:
-        #globals()["hangul_temp_d{}".format(i)] = globals()["jaum_change_d{}".format(i)]
-        #globals()["hangul_temp_d{}".format(i)].replace("ㄷ","ㄷ2")
-        #hangul_bunli = hangul_bunli.replace(globals()["jaum_change_d_{}".format(i)],globals()["jaum_change_d_{}".format(i)].replace("ㄷ","ㄷ2"))
         hangul_bunli = hangul_bunli.replace(globals()["jaum_change_d_{}".format(i)][0],"d")
         print('found',globals()["jaum_change_d_{}".format(i)])
-        #hangul_bunli.replace(globals()["jaum_change_d_{}".format(i)],globals()["hangul_temp_d{}".format(i)])
-        #hangul_bunli.replace("'jaum_change_d_{}'.format(i)",'hangul_temp_d{}.format(i)')
-    #if hangul_bunli in globals()["jaum_change_b_{}".format(i)]:
     if hangul_bunli.find(globals()["jaum_change_b_{}".format(i)]) >= 0:
-        #globals()["hangul_temp_b{}".format(i)] = globals()["jaum_change_d{}".format(i)]
-        #globals()["hangul_temp_b{}".format(i)].replace("Q","Q2")
-        #hangul_bunli = hangul_bunli.replace(globals()["jaum_change_b_{}".format(i)],globals()["jaum_change_b_{}".format(i)].replace("ㅂ","ㅂ2"))
         hangul_bunli = hangul_bunli.replace(globals()["jaum_change_b_{}".format(i)][0],"b")
         print('found',globals()["jaum_change_b_{}".format(i)])
-        #hangul_bunli.replace(globals()["jaum_change_b_{}".format(i)],globals()["hangul_temp_b{}".format(i)])
-        #hangul_bunli.replace("'jaum_change_b_{}'.format(i)",'hangul_temp_b{}.format(i)')
     if hangul_bunli.find(globals()["jaum_change_r_{}".format(i)]) >= 0:
         hangul_bunli = hangul_bunli.replace(globals()["jaum_change_r_{}".format(i)][0],"r")
         print('found',globals()["jaum_change_r_{}".format(i)])
